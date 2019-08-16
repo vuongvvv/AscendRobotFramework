@@ -1,0 +1,4 @@
+create_merchant_uri: /master-merchant/v1/api/merchants
+delete_merchant_uri: /master-merchant/v1/api/merchants/{id}
+search_merchant_uri: /master-merchant/v1/api/merchants?
+update_merchant_uri: /master-merchant/v1/api/merchants

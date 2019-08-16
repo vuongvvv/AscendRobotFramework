@@ -1,0 +1,17 @@
+#Alpha Merchant
+url : https://am-rpp-alpha.eggdigital.com/master-merchant/v1
+egg_api_url : https://am-rpp-alpha.eggdigital.com     #create by P'fren
+
+# Database Merchant MySQL Alpha
+DBHost:         192.168.120.69
+DBPort:         3306
+DBName:         rpp_merchant
+DBUser:         RPP_MERCHANT
+DBPass:         1qaz2wsx
+
+# User Token in Alpha Merchant
+url_token :  https://alpha-gateway.weomni-test.com
+
+token: cnBwX21lcmNoYW50OjlNMktJWFh3UFI3T0RiOTA=
+
+

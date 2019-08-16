@@ -1,0 +1,13 @@
+requests
+pymysql
+robotframework
+robotframework-requests
+robotframework-jsonlibrary
+robotframework-databaselibrary
+robotframework-selenium2library
+robotframework-seleniumlibrary
+robotframework-httplibrary
+selenium
+DateTime
+pyyaml
+mysql-connector

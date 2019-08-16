@@ -1,0 +1,17 @@
+#Staging Merchant
+url : https://staging-am-rpp.eggdigital.com/master-merchant/v1
+egg_api_url : https://staging-am-rpp.eggdigital.com     #create by P'fren
+
+# Database Merchant MySQL Alpha
+DBHost:         192.168.110.172
+DBPort:         3306
+DBName:         _rpp_merchant
+DBUser:         RPP_RW
+DBPass:         RPP*rw172#
+
+# User Token in Staging Merchant
+url_token :  https://gateway.weomni-test.com
+
+token: cnBwX21lcmNoYW50OjNISkhnNmJ0aHRDa0Q/R3I=
+
+

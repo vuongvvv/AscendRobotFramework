@@ -1,0 +1,127 @@
+*** Keywords ***
+
+################################# TOKEN O2O #################################
+
+Get Token
+    &{paramsToken}=   Create Dictionary
+    ...   grant_type=client_credentials
+
+    &{headersToken}=  Create Dictionary
+    ...   Content-Type=application/x-www-form-urlencoded  Authorization=Basic ${token}
+
+    Create Session    tmd   ${url_token}
+    ${RESP}=    Post Request    tmd    /uaa/oauth/token  data=${paramsToken}    headers=${headersToken}
+    Return From Keyword    ${RESP}
+
+Set header
+    ${RESP}=  Get Token
+    ${convert}=  converting a json file       ${RESP.content}
+    ${token}=  Set Variable  ${convert['access_token']}
+    &{headers}=  Create Dictionary
+    ...    Content-Type=application/json
+    ...    Authorization=bearer ${token}
+    [Return]  ${headers}
+
+
+################################# GET #################################
+Get (merchant without benefit)
+
+   [Arguments]        ${param}
+    Create Session    tmd2   ${url}
+    &{headers}   set header
+    ${RESP}=    Get Request    tmd2    /api/merchants/benefits/without     params=${param}       headers=${headers}
+    Return From Keyword    ${RESP}
+
+
+Get (merchant benefit_dateFuture)
+
+   [Arguments]    ${paramsFuture}
+    Create Session    tmd2   ${url}
+    &{headers}   set header
+    ${RESP}=    Get Request    tmd2    /api/merchants/benefits     params=${paramsFuture}       headers=${headers}
+    Return From Keyword    ${RESP}
+
+Get (all merchant campaign_group)
+
+    Create Session    tmd2   ${url}
+    &{headers}   set header
+    ${RESP}=    Get Request    tmd2    /api/merchant-campaign-groups     headers=${headers}
+    Return From Keyword    ${RESP}
+
+Get (get all campaign_group)
+
+    Create Session    tmd2   ${url}
+    &{headers}   set header
+    ${RESP}=    Get Request    tmd2    /api/campaign-groups     headers=${headers}
+    Return From Keyword    ${RESP}
+
+Get (get campaign_group by Id)
+
+   [Arguments]    ${CampaignById}
+    Create Session    tmd2   ${url}
+    &{headers}   set header
+    ${RESP}=    Get Request    tmd2    /api/campaign-groups/${CampaignById}     params=${CampaignById}       headers=${headers}
+    Return From Keyword    ${RESP}
+
+
+Get (get benefit in merchant)
+
+   [Arguments]    ${merchantIdInBenefit}
+    Create Session    tmd2   ${url}
+    &{headers}   set header
+    ${RESP}=    Get Request    tmd2    /api/merchants/${merchantIdInBenefit}/benefits     params=${merchantIdInBenefit}       headers=${headers}
+    Return From Keyword    ${RESP}
+
+
+################################# POST #################################
+
+
+
+Post (merchant)
+
+    [Arguments]    ${data_post}
+    Create Session    tmd4   ${url}
+    &{headers}   set header
+    ${RESP}=    Post Request    tmd4   /api/addresses  data=${data_post}    headers=${headers}
+    Return From Keyword    ${RESP}
+
+
+Post (merchant) should be successful
+    [Arguments]    ${RESP}
+    Should Be Equal As Strings    ${RESP.status_code}    201
+
+
+################################# PUT #################################
+
+#Put (Update MerchantCampaignGroup)
+#    [Arguments]    ${data_UM_1001}
+#    Create Session    tmd3   ${url}
+#    &{headers}   set header
+#    ${RESP}=    Put Request    tmd3    /api/merchant-campaign-groups     data=${data_UM_1001}    headers=${headers}
+#    Return From Keyword    ${RESP}
+
+Put (Update Muti MerchantCampaignGroup)
+
+    [Arguments]   ${campaignId}    ${data_UM_1001}
+    Create Session    tmd4   ${url}
+    &{headers}   set header
+    ${RESP}=    Put Request    tmd4   /api/merchant-campaign-groups/multi/${campaignId}    data=${data_UM_1001}    headers=${headers}
+    Return From Keyword    ${RESP}
+
+Put (Update CampaignGroup)
+
+    [Arguments]   ${data}
+    Create Session    tmd4   ${url}
+    &{headers}   set header
+    ${RESP}=    Put Request    tmd4   /api/campaign-groups    data=${data}    headers=${headers}
+    Return From Keyword    ${RESP}
+
+
+################################# Util #################################
+
+Converting a JSON File
+    [Arguments]    ${RESP}
+    ${MY_DATA_TABLE_VALUES}    evaluate  json.loads('''${RESP}''')    json
+    [Return]  ${MY_DATA_TABLE_VALUES}
+
+##################################################################

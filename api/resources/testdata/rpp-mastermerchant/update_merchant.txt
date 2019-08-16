@@ -1,0 +1,44 @@
+*** Variables ***
+
+&{update_merchant_api}
+  ...   id=00000
+  ...   storeNameTh=สโนว์ไวท์
+  ...   storeNameEn=Snow white
+  ...   firstName=Walt
+  ...   lastName=Disney
+  ...   storeDetail=Cartoon
+  ...   birthdate=1990-06-12
+  ...   gender=female
+  ...   tmnStatus=APPROVE
+  ...   trueyouStatus=ACTIVE
+  ...   tmnApproveDate=2018-10-26T15:56:16
+  ...   trueyouApproveDate=2018-10-26T15:56:16
+  ...   approveDate=2018-10-26T15:56:16
+
+&{update_gender_api}
+  ...   id=00000
+  ...   gender=female
+
+&{update_merchant1_api}
+  ...   id=00000
+  ...   storeNameTh=สโนว์ไวท์
+  ...   storeNameEn=Snow white
+  ...   firstName=Walt
+
+&{update_tmnApproveDate_api}
+  ...   id=00000
+  ...   tmnApproveDate=2018-10-26T15:56:16
+
+&{update_trueyouApproveDate_api}
+  ...   id=00000
+  ...   trueyouApproveDate=2018-10-26T15:56:16
+
+&{update_approveDate_api}
+  ...   id=00000
+  ...   approveDate=2018-10-26T15:56:16
+
+&{update_without_time_api}
+  ...   id=00000
+  ...   tmnApproveDate=2018-10-25
+  ...   trueyouApproveDate=2018-10-25
+  ...   approveDate=2018-10-25

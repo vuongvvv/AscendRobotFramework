@@ -1,0 +1,37 @@
+*** Variables ***
+
+&{create_merchant_for_outlet}
+  ...   merchantId=9110018
+  ...   trueyouId=111911001800001
+  ...   tmnMerchantId=9110018
+  ...   businessType=INDIVIDUAL
+  ...   categoryId=90cdg8c080f2b6b699e5b711d13d4man
+  ...   categoryName=pam
+  ...   storeTypeId=1
+  ...   registerChannel=mobile_admin_register
+  ...   storeNameTh=ร้านแป๋มเอง_แป๋มแป๋ม55
+  ...   storeNameEn=Beauty_Pam store
+  ...   storeDetail=shopping
+  ...   storeContactNo1=089999999
+  ...   storeFacebook=www.Beauty_Pam.com
+  ...   storeLineAt=Beauty_Pam_LineAt
+  ...   storeTwitter=Beauty_Pam_Twitter
+  ...   storeInstagram=Beauty_Pam_Instagram
+  ...   thaiId=1999701177668
+  ...   titleId=3
+  ...   firstName=โรบอททดสอบ
+  ...   lastName=ทดสอบโรบอท
+  ...   contactNo=089999999
+  ...   email=sipahtsanan.kit@ascendcorp.com
+  ...   lineId=Beauty_Pam
+  ...   lineAt=Beauty_Pam_LineAt
+  ...   refId=6f4df8c080f2b6b898e5b711d13d5cac
+  ...   deviceType=QRCODE
+  ...   serviceTypes=${serviceType}
+  ...   paymentMethods=[]
+  ...   status=APPROVE
+  ...   gender=female
+  ...   birthdate=1990-09-09
+  ...   tmnApproveDate=2018-10-25T16:37:16
+  ...   trueyouApproveDate=2018-10-26T16:37:16
+  ...   approveDate=2018-10-25T16:37:16
